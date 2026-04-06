@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Manitas Plus | Reparaciones del hogar en Alicante</title>
+
+<meta name="description" content="Servicios profesionales de fontanería, electricidad, pintura, albañilería y montaje de muebles en Alicante. Presupuesto rápido por WhatsApp.">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:Arial;
+background: url('https://www.transparenttextures.com/patterns/concrete-wall.png'),
+linear-gradient(#2c3e50, #1a252f);
+background-blend-mode: overlay;
+overflow-x:hidden;
+}
+
+/* BANNER */
+header img{
+width:100%;
+height:700px;
+object-fit:cover;
+}
+
+/* BOTONES */
+.top-buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+padding:15px;
+background:#111;
+}
+
+.top-buttons a{
+color:white;
+padding:12px 18px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.call{background:#007bff;}
+.whatsapp-btn{background:#25D366;}
+
+/* TITULO */
+h1{
+text-align:center;
+padding:25px;
+color:white;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+padding:20px;
+max-width:1200px;
+margin:auto;
+}
+
+.card{
+background:white;
+border-radius:12px;
+overflow:hidden;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.card:hover{
+transform:scale(1.03);
+}
+
+.card img{
+width:100%;
+}
+
+/* RESEÑAS */
+.reviews{
+padding:40px 20px;
+background:white;
+}
+
+.review{
+margin-bottom:10px;
+}
+
+/* MAPA */
+.map{
+padding:40px 20px;
+background:#eee;
+}
+
+/* FORMULARIO */
+.form{
+padding:40px 20px;
+background:white;
+max-width:800px;
+margin:auto;
+}
+
+.form input, .form textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+.form button{
+background:#25D366;
+color:white;
+padding:15px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+width:100%;
+font-size:16px;
+}
+
+/* FOOTER */
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+</style>
+
+<script>
+
+function enviar(servicio){
+
+let tel="34681827114";
+
+let msg={
+general:"Hola, quiero información general",
+pintura:"Hola, quiero presupuesto de pintura",
+electricidad:"Hola, necesito un electricista",
+fontaneria:"Hola, necesito un fontanero",
+albanileria:"Hola, necesito albañil",
+bricolaje:"Hola, necesito bricolaje",
+muebles:"Hola, necesito montaje de muebles",
+desplazamiento:"Hola, quiero información sobre desplazamiento"
+};
+
+window.open(`https://wa.me/${tel}?text=${encodeURIComponent(msg[servicio])}`,'_blank');
+}
+
+function enviarFormulario(){
+let nombre=document.getElementById("nombre").value;
+let mensaje=document.getElementById("mensaje").value;
+
+let texto=`Hola, soy ${nombre}. ${mensaje}`;
+window.open(`https://wa.me/34681827114?text=${encodeURIComponent(texto)}`);
+}
+
+</script>
+
+</head>
+
+<body>
+
+<!-- 🔥 SONIDO -->
+<audio id="crackSound" src="crack.mp3"></audio>
+
+<header>
+<img src="banner.jpg">
+</header>
+
+<div class="top-buttons">
+<a href="tel:+34681827114" class="call">📞 Llamar</a>
+<a href="https://wa.me/34681827114" class="whatsapp-btn">💬 WhatsApp</a>
+</div>
+
+<h1>Servicios Profesionales del Hogar</h1>
+
+<div class="grid">
+
+<div class="card" onclick="enviar('general')"><img src="servicios.jpg"></div>
+<div class="card" onclick="enviar('pintura')"><img src="pintura.jpg"></div>
+<div class="card" onclick="enviar('electricidad')"><img src="electricidad.jpg"></div>
+<div class="card" onclick="enviar('fontaneria')"><img src="fontaneria.jpg"></div>
+<div class="card" onclick="enviar('albanileria')"><img src="albanileria.jpg"></div>
+<div class="card" onclick="enviar('bricolaje')"><img src="bricolaje.jpg"></div>
+<div class="card" onclick="enviar('muebles')"><img src="muebles.jpg"></div>
+<div class="card" onclick="enviar('desplazamiento')"><img src="desplazamiento.jpg"></div>
+
+</div>
+
+<!-- ⭐ RESEÑAS -->
+<div class="reviews">
+<h2>⭐ Opiniones de clientes</h2>
+<p class="review">★★★★★ Muy rápido y profesional</p>
+<p class="review">★★★★★ Buen precio y atención</p>
+<p class="review">★★★★★ Recomendado 100%</p>
+</div>
+
+<!-- 📍 MAPA -->
+<div class="map">
+<h2 style="text-align:center;">📍 Zona de servicio</h2>
+<iframe src="https://www.google.com/maps?q=Ondara&output=embed" width="100%" height="300"></iframe>
+</div>
+
+<!-- 🧾 FORMULARIO -->
+<div class="form">
+<h2>Solicitar presupuesto</h2>
+
+<input type="text" id="nombre" placeholder="Tu nombre">
+<textarea id="mensaje" placeholder="Describe el trabajo..."></textarea>
+
+<button onclick="enviarFormulario()">Enviar por WhatsApp</button>
+</div>
+
+<footer>
+Manitas Plus © 2026 | Alicante
+</footer>
+
+<!-- 💥 EFECTO GRIETAS PRO -->
+<script>
+
+document.addEventListener("click", function(e){
+
+let sound=document.getElementById("crackSound");
+if(sound){sound.currentTime=0;sound.play();}
+
+let crack=document.createElement("div");
+crack.style.position="fixed";
+crack.style.left=e.clientX+"px";
+crack.style.top=e.clientY+"px";
+crack.style.width="120px";
+crack.style.height="120px";
+crack.style.pointerEvents="none";
+crack.style.transform="translate(-50%,-50%) scale(0)";
+crack.style.background="radial-gradient(circle, rgba(0,0,0,0.9) 0%, transparent 70%)";
+crack.style.borderRadius="50%";
+crack.style.animation="crackAnim 0.6s ease-out forwards";
+
+document.body.appendChild(crack);
+
+for(let i=0;i<6;i++){
+let dust=document.createElement("div");
+dust.style.position="fixed";
+dust.style.left=e.clientX+"px";
+dust.style.top=e.clientY+"px";
+dust.style.width="6px";
+dust.style.height="6px";
+dust.style.background="#ccc";
+dust.style.borderRadius="50%";
+dust.style.pointerEvents="none";
+dust.style.animation="dustAnim 1s ease-out forwards";
+
+document.body.appendChild(dust);
+
+setTimeout(()=>dust.remove(),1000);
+}
+
+setTimeout(()=>crack.remove(),800);
+
+});
+
+</script>
+
+<style>
+
+@keyframes crackAnim{
+0%{transform:translate(-50%,-50%) scale(0);opacity:1;}
+100%{transform:translate(-50%,-50%) scale(2.5);opacity:0;}
+}
+
+@keyframes dustAnim{
+0%{transform:translate(-50%,-50%);opacity:1;}
+100%{transform:translate(-20px,-40px);opacity:0;}
+}
+
+</style>
+
+</body>
+</html>
